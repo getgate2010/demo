@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<style>
+    .borderbox{
+    padding:20px;
+    border: 2px solid gray;
+    margin:20px;
+    }
+</style>
+</head>
+<body>
+<div id="mydiv"></div>
+
+<script type="text/babel">
+    function Home() {
+        return<div class="container">
+                <div class="box borderbox">
+    <ImgContent
+        title="Good for Hot Sleepers. Good for You."
+        subtitle="THOUGHTFUL DESIGN"
+        context="Temperature-regulating Muslin weave in the 365 Blanket is ideal for hot sleepers and those suffering from night sweats while simultaneously keeping those on the colder side nice and warm."
+        img="https://bulma.io/images/placeholders/256x256.png"
+        />
+
+                <ImgContentReverse
+        title="Machine Washable and Made to Last."
+        subtitle="SUPERIOR DURABILITY"
+        context="Our 365 Blanket is made of 4 ply/8 layers of premium Muslin cotton; each ply is made of 2 intricately woven pieces of material. Prewashed, preshrunk and satisfyingly softer with every clean."
+        img="https://bulma.io/images/placeholders/256x256.png"
+                />
+
+                <ImgContent
+        title="Adds Warmth to Your Bedroom."
+        subtitle="EFFORTLESSLY ELEGANT"
+        context="The 365 Blanket not only keeps you cozy but also earns you compliments for your great taste. And if you want the extra flair, the Phantom Black Luxe option is slightly more dense than our regular & elegantly trimmed in white whip stitching."
+        img="https://bulma.io/images/placeholders/256x256.png"
+                />
+
+                <ImgContentReverse
+        title="The Perfect Gift."
+        subtitle="LOVED BY ALL FAMILY MEMBERS"
+        context="Our blanket comes in 3 different sizes and 7 colors, making it a beautiful, cozy addition to every bed and a new favorite of everyone in the house - kids, adults, and even pets."
+        img="https://bulma.io/images/placeholders/256x256.png"
+                />
+                <div class="box borderbox">
+                <ImgBox
+        title="Great for Sharing (and Avoiding Battles)."
+        subtitle="TRULY OVERSIZED"
+        context="A nightly battle for warmth with your partner is never easy. The 365 Blanket is so generously oversized that it gives enough cover for everyone and can hide any unsightly mattress and box spring."
+        img="https://bulma.io/images/placeholders/256x256.png"
+                /></div>
+                </div>
+        </div>;
+    }
+
+    function ImgContent({title,subtitle,context,img}){
+        return <section id="features" class="section has-mustard-bg">
+               <div class="container">
+                <div class="columns reverse-row-order">
+                <div class="column">
+                <p class="subtitle has-text-centered is-size-6">
+                {subtitle}</p>
+        <p class="title has-text-centered">
+                {title}</p>
+        <p class="has-text-green paragraph">
+                {context}
+        </p>
+        </div>
+        <div class="column">
+                <div class="has-text-centered">
+                <figure class="image is-inline-block">
+                <img class="feature-img"  src={img} />
+                </figure>
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>;
+    }
+    function ImgContentReverse({title,subtitle,context,img}){
+        return <section id="features" class="section has-mustard-bg">
+                <div class="container">
+                <div class="columns reverse-row-order">
+                <div class="column">
+                <div class="has-text-centered">
+                <figure class="image is-inline-block">
+                <img class="feature-img"  src={img} />
+                </figure>
+                </div>
+                </div>
+                <div class="column">
+                <p class="subtitle has-text-centered is-size-6">
+                {subtitle}</p>
+                <p class="title has-text-centered">
+                {title}</p>
+                <p class="has-text-green paragraph">
+                {context}
+                </p>
+                </div>
+                </div>
+                </div>
+                </section>;
+    }
+    function ImgBox({title,subtitle,context,img}){
+        return <section id="features" class="section has-mustard-bg">
+                <div class="container">
+                <div class="columns reverse-row-order">
+                <div class="column">
+                <p class="subtitle has-text-centered is-size-6">
+                {subtitle}</p>
+                <p class="title has-text-centered">
+                {title}</p>
+                <p class="has-text-green paragraph">
+                {context}
+                </p>
+                </div>
+                        </div>
+                <div class="columns reverse-row-order">
+                <div class="column">
+                <div class="has-text-right">
+                <figure class="image is-inline-block">
+                <img class="feature-img"  src={img} />
+                </figure>
+                </div>
+                </div>
+                <div class="column">
+                <div class="has-text-left">
+                <figure class="image is-inline-block">
+                <img class="feature-img"  src={img} />
+                </figure>
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>;
+    }
+
+    ReactDOM.render(<Home />, document.getElementById('mydiv'))
+</script>
+</body>
+</html>
